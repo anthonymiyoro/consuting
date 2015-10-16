@@ -38,4 +38,12 @@ Its called a markup language becuese your telling the computer where to put stuf
 ## Making a basic HTML layout
 	
 	1 Go to the index.html file
+	2 Type in <htm and press enter to select the html prompt when it appears
+	
+	You should see the basic structure of a html file appear
+	
+### Basic HTML tags2 Type in <htm and press enter to select the html prompt when it appears
+	1 The <!DOCTYPE html> tag is used to denote that the document is in html5 format
+	
+
 
