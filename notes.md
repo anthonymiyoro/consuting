@@ -1,4 +1,4 @@
-# What is HTML/CSS
+# What is HTML/CSS?
 HTML afre computer languages that are used to make webpagausees
 Its called a markup language becuese your telling the computer where to put stuff on a website
 
@@ -11,8 +11,11 @@ Its called a markup language becuese your telling the computer where to put stuf
 ## Making a HTML page
 
  1 Make a new file 
+ 
  2 On that new file write 'This is going to be our HTML page'
+ 
  3 Make a new folder called htmlproject
+ 
  4 Rename the file into index.html
 
 ### What just happened?
