@@ -291,14 +291,14 @@ main > section {
 h1.navbar-brand {
     font-size: 20px;
     font-weight: 700;
-    margin: 0;
-    text-transform: uppercase;
+    margin: 15px;
+/*    text-transform: uppercase;*/
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
     font-size: 15px;
-    text-transform: uppercase;
+   text-transform: uppercase;
 }
 
 
@@ -309,7 +309,7 @@ h1.navbar-brand {
 
 #home-slider {
     position: relative;
-    padding: 0;
+    padding-top: 0px;
 }
 
 .sl-slider-wrapper {
@@ -371,7 +371,7 @@ h1.navbar-brand {
     display: block;
     font-size: 24px;
     margin-bottom: 45px;
-    text-transform: capitalize;
+    text-transform: ;
 }
 
 .caption-content p {
