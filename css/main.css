@@ -342,7 +342,7 @@ h1.navbar-brand {
 }
 
 .slide-caption {
-    color: #fff;
+    color: black;
     display: table;
     height: 100%;
     left: 0;
@@ -360,7 +360,7 @@ h1.navbar-brand {
 }
 
 .caption-content h2 {
-    color: #fff;
+    color: black;
     font-size: 52px;
     font-weight: 400;
     margin-bottom: 25px;
