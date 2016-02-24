@@ -1,15 +1,21 @@
-<html> 
-<head>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
     	<!-- meta character set -->
         <meta charset="utf-8">
 		<!-- Always force latest IE rendering engine or request Chrome Frame -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Blue One Page HTML Template</title>		
+        <title>Allen Cole Consulting</title>		
 		<!-- Meta Description -->
         <meta name="description" content="Blue One Page Creative HTML5 Template">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
-        <meta name="author" content="Muhammad Morshed">
-		
+        <!--favicon-->
+       <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 		<!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -51,7 +57,8 @@
         <!--
         Fixed Navigation
         ==================================== -->
-        <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+    
+        <header id="navigation" class=" navbar-fixed-top animated-header navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <!-- responsive nav button -->
@@ -64,21 +71,29 @@
 					<!-- /responsive nav button -->
 					
 					<!-- logo -->
-					<h1 class="navbar-brand">
-						<a href="#body">ALLEN COLE<br/>CONSULTING<br/><br/></a>
-					</h1>
+					<a class="navbar-brand" href="index.html">
+						<img src="img/Allencole.png" width="180" height="65">
+					</a>
 					<!-- /logo -->
                 </div>
 
 				<!-- main nav -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                <div class="collapse navbar-collapse">
+                <nav class="collapse navbar-collapse navbar-right trans-gradient" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Home</a></li>
-                        <li><a href="#service">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#service">Services</a>
+                         <ul class="dropdown-menu">
+                          <li><a href="#">Page 1-1</a></li>
+                          <li><a href="#">Page 1-2</a></li>
+                          <li><a href="#">Page 1-3</a></li> 
+                        </ul>
+                        </li>
                         <li><a href="#">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </nav>
+                </div>
 				<!-- /main nav -->
 				
             </div>
@@ -86,8 +101,140 @@
         <!--
         End Fixed Navigation
         ==================================== -->
-        
-      	<footer id="footer">
+		
+		<main class="site-content" role="main">
+            
+            
+            		<!-- portfolio section -->
+			<section id="portfolio">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center wow animated fadeInDown">
+							<h2>OUR PARTNERS</h2>
+							<p>Some of our partners.</p>
+						</div>
+						
+
+						<ul class="project-wrapper wow animated fadeInUp">
+							<li class="portfolio-item">
+								<img src="img/portfolio/kisii-county.png" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+								<figcaption class="mask">
+									<h3>Kisii County</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="img/portfolio/Marksignmedia.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/portfolio/ascetic-2-1080x706.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Acetic Coffee Shop</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street" href="img/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/portfolio/Marksignmedia.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<img src="img/portfolio/Marksignmedia.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Marksign Media</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="img/portfolio/i"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/portfolio/littlesecrets.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
+								<figcaption class="mask">
+									<h3>Little Secrets</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/portfolio/bees-park-hotel-1.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Bees Park Hotel</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="img/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+							
+							<li class="portfolio-item">
+								<img src="img/portfolio/mercury.png" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+								<figcaption class="mask">
+									<h3>Mercury Jewellry</h3>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+								</figcaption>
+								<ul class="external">
+									<li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
+									<li><a href=""><i class="fa fa-link"></i></a></li>
+								</ul>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			</section>
+			<!-- end portfolio section -->
+            
+            
+            			<!-- about section -->
+			<section id="about" >
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 wow animated fadeInLeft">
+							<div class="recent-works">
+								<h3>Recent Works</h3>
+								<div id="works">
+									<div class="work-item">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> <br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+									</div>
+									<div class="work-item">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+									</div>
+									<div class="work-item">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
+							<div class="welcome-block">
+								<h3>Welcome To Our Site</h3>								
+						     	 <div class="message-body">
+									<img src="img/member-1.jpg" class="pull-left" alt="member">
+						       		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+						     	 </div>
+						       	<a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end about section -->
+            
+            		</main>
+		
+		<footer id="footer">
 			<div class="container">
 				<div class="row text-center">
 					<div class="footer-content">
@@ -105,11 +252,9 @@
 						</form>
 						<div class="footer-social">
 							<ul>
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>
+								<li class="wow animated zoomIn"><a href="https://www.facebook.com/allencolec"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="https://twitter.com/AllenColec"><i class="fa fa-twitter fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="https://www.youtube.com/channel/UCGNa2NYIunHDovGl5uji5xQ"><i class="fa fa-youtube fa-3x"></i></a></li>
 							</ul>
 						</div>
 					</div>
