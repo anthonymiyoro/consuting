@@ -22,6 +22,9 @@
 background:rgba(56,40,22,.5); 
 }
 
+.navbar-default .navbar-nav>li>a{
+        color: #2ea3f2;
+}
 
 body {
     background-color: #fff;
@@ -350,7 +353,7 @@ h1.navbar-brand {
 }
 
 .slide-caption {
-    color: black;
+    color: #2ea3f2;
     display: table;
     height: 100%;
     left: 0;
@@ -368,7 +371,7 @@ h1.navbar-brand {
 }
 
 .caption-content h2 {
-    color: black;
+    color: #2ea3f2;
     font-size: 52px;
     font-weight: 400;
     margin-bottom: 25px;
