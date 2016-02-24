@@ -353,7 +353,7 @@ h1.navbar-brand {
 }
 
 .slide-caption {
-    color: #2ea3f2;
+    color: white;
     display: table;
     height: 100%;
     left: 0;
@@ -361,8 +361,11 @@ h1.navbar-brand {
     position: absolute;
     text-align: center;
     top: 0;
-    width: 100%;
+    width: 990px;
     z-index: 11;
+    padding-left: 230px;
+/*    margin-left: 20px;*/
+/*    margin-right: 20px;*/
 }
 
 .slide-caption .caption-content {
@@ -371,11 +374,12 @@ h1.navbar-brand {
 }
 
 .caption-content h2 {
-    color: #2ea3f2;
+    color: white;
     font-size: 52px;
     font-weight: 400;
     margin-bottom: 25px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .caption-content > span {
