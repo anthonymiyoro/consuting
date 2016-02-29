@@ -27,16 +27,14 @@ background:rgba(56,40,22,.5);
 }
 
 body {
-    background-color: #fff;
+/*    background-image: url(../img/slider/cinelli.jpeg);*/
+    background-repeat: repeat-x;
     font-family: 'Open Sans', sans-serif;
     line-height: 24px;
     font-size: 16px;
     color: #818181;
 }
 
-pic {
-    background-image: url(../img/slider/Oficina-da-Marca-7-things-to-do-after-writing-a-blog-post-01.jpg)
-}
 
 figure, p, address {
     margin: 0;
@@ -66,7 +64,7 @@ a, a:hover, a:focus, .btn:focus {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Open Sans', sans-serif;
-    color: #252525;
+    color: white;
 }
 
 main > section {
@@ -629,6 +627,9 @@ h1.navbar-brand {
 /*=================================================================
 	Portfolio
 ==================================================================*/
+.service{
+    background-color: white;
+}
 
 .project-wrapper {
     margin: 0;
