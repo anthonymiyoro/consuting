@@ -21,7 +21,7 @@ def get_json_from_url(url):
 
 
 # collects messages sent to the bot
-def get_updates():
+def get_updates(offset=None):
     url = URL + "getUpdates"
 # dont show any messages with smaller ids
     if offset:
@@ -64,13 +64,12 @@ def echo_all(updates):
 # infinite loop
 # collect last sent text and echo it back, check every 0.5 seconds
 def main():
-    last_textchat = (None, None)
+    last_update_id = None
     while True:
-        text, chat = get_last_chat_id_and_text(get_updates())
-        if (text, chat) != last_textchat:
-            send_message(text, chat)
-            # saves last message id replied to
-            last_textchat = (text, chat)
+        updates = get_updates(last_update_id)
+        if len(updates["result"]) > 0:
+            last_update_id = get_last_update_id(updates) + 1
+            echo_all(updates)
         time.sleep(0.5)
 
 
