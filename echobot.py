@@ -1,7 +1,7 @@
 import time
 import json
 import requests
-import urlib
+import urllib
 
 
 TOKEN = '320053880:AAH-nr-2Je_tgUpaPm4GIyMnHk0iIloNzEU'
