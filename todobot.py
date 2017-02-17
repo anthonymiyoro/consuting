@@ -43,9 +43,11 @@ def get_last_chat_id_and_text(updates):
 
 
 # sends the message contained in text to chat_id
-def send_message(text, chat_id):
+def send_message(text, chat_id, reply_markup=None):
     text = urllib.parse.quote_plus(text)
-    url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
+    url = URL + "sendMessage?text={}&chat_id={}&parse_mode=Markdown".format(text, chat_id)
+    if reply_markup:
+        url += "&reply_markup={}".format(reply_markup)
     get_url(url)
 
 
@@ -67,17 +69,29 @@ def handle_updates(updates):
 # store all items from the database in the items variable
             items = db.get_items()
 # check for and delete duplicates
-            if text in items:
+            if text == "/done":
+                keyboard = build_keyboard(items)
+                send_message("Select items to delete", chat, keyboard)
+            elif text in items:
                 db.delete_item(text)
                 items = db.get_items()
+                keyboard = build_keyboard(items)
+                send_message("Select an item to delete", chat, keyboard)
             else:
                 # if not duplicate, add to db
                 db.add_item(text)
                 items = db.get_items()
-            message = "\n".join(items)
-            send_message(message, chat)
+                message = "\n".join(items)
+                send_message(message, chat)
         except KeyError:
             pass
+
+
+# create a keyboard with all the items, converts it to json
+def build_keyboard(items):
+    keyboard = [[item] for item in items]
+    reply_markup = {"keyboard": keyboard, "one_time_keyboard": True}
+    return json.dumps(reply_markup)
 
 
 # infinite loop
