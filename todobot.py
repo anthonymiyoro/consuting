@@ -45,7 +45,9 @@ def get_last_chat_id_and_text(updates):
 # sends the message contained in text to chat_id
 def send_message(text, chat_id, reply_markup=None):
     text = urllib.parse.quote_plus(text)
-    url = URL + "sendMessage?text={}&chat_id={}&parse_mode=Markdown".format(text, chat_id)
+    url = URL + \
+        "sendMessage?text={}&chat_id={}&parse_mode=Markdown".format(
+            text, chat_id)
     if reply_markup:
         url += "&reply_markup={}".format(reply_markup)
     get_url(url)
@@ -71,6 +73,13 @@ def handle_updates(updates):
         if text == "/done":
             keyboard = build_keyboard(items)
             send_message("Select items to delete", chat, keyboard)
+# if /start is sent, display message
+        elif text == "/start":
+            send_message(
+                "Welcome to your Personal Automated To-Do List bot. Send any to do item and I'll store it. You can then send /done to remove items.", chat)
+# if / is in the message then ignore
+        elif text.startswith("/"):
+            continue
 # bring back the menu after deleting an item
         elif text in items:
             db.delete_item(text, chat)
