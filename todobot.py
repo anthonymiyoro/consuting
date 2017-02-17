@@ -68,10 +68,11 @@ def handle_updates(updates):
             chat = update["message"]["chat"]["id"]
 # store all items from the database in the items variable
             items = db.get_items()
-# check for and delete duplicates
+# when they send /done, show keyboard menu
             if text == "/done":
                 keyboard = build_keyboard(items)
                 send_message("Select items to delete", chat, keyboard)
+# bring back the menu after deleting an item
             elif text in items:
                 db.delete_item(text)
                 items = db.get_items()
