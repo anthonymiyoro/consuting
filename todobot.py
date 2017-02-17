@@ -63,29 +63,26 @@ def get_last_update_id(updates):
 
 def handle_updates(updates):
     for update in updates["result"]:
-        try:
-            text = update["message"]["text"]
-            chat = update["message"]["chat"]["id"]
+        text = update["message"]["text"]
+        chat = update["message"]["chat"]["id"]
 # store all items from the database in the items variable
-            items = db.get_items()
+        items = db.get_items(chat)
 # when they send /done, show keyboard menu
-            if text == "/done":
-                keyboard = build_keyboard(items)
-                send_message("Select items to delete", chat, keyboard)
+        if text == "/done":
+            keyboard = build_keyboard(items)
+            send_message("Select items to delete", chat, keyboard)
 # bring back the menu after deleting an item
-            elif text in items:
-                db.delete_item(text)
-                items = db.get_items()
-                keyboard = build_keyboard(items)
-                send_message("Select an item to delete", chat, keyboard)
-            else:
-                # if not duplicate, add to db
-                db.add_item(text)
-                items = db.get_items()
-                message = "\n".join(items)
-                send_message(message, chat)
-        except KeyError:
-            pass
+        elif text in items:
+            db.delete_item(text, chat)
+            items = db.get_items(chat)
+            keyboard = build_keyboard(items)
+            send_message("Select an item to delete", chat, keyboard)
+        else:
+            # if not duplicate, add to db
+            db.add_item(text, chat)
+            items = db.get_items(chat)
+            message = "\n".join(items)
+            send_message(message, chat)
 
 
 # create a keyboard with all the items, converts it to json
