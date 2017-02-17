@@ -10,26 +10,32 @@ class Database:
         self.conn = sqlite3.connect(dbname)
 
     # create a table called items with a text colun called descrtiption
+    # and an ower column
     def setup(self):
-        stmt = "CREATE TABLE IF NOT EXISTS items (description text)"
+    	print("creating table")
+        stmt = "CREATE TABLE IF NOT EXISTS items (description text, owner text)"
         self.conn.execute(stmt)
         self.conn.commit()
 
-     # adds item text to our table
-    def add_item(self, item_text):
-        stmt = "INSERT INTO items(description) VALUES (?)"
-        args = (item_text, )
+
+     # adds item text and owner to our table
+    def add_item(self, item_text, owner):
+        stmt = "INSERT INTO items(description, owner) VALUES (?, ?)"
+        args = (item_text, owner)
         self.conn.execute(stmt, args)
         self.conn.commit()
 
-     # remove item_text from datatbase
-    def delete_item(self, item_text):
-        stmt = "DELETE FROM items WHERE description = (?)"
-        args = (item_text, )
+
+     # remove item_text from database
+    def delete_item(self, item_text, owner):
+        stmt = "DELETE FROM items WHERE description = (?) AND owner = (?)"
+        args = (item_text, owner)
         self.conn.execute(stmt, args)
         self.conn.commit()
 
-    # return a list of all the items in the database
-    def get_items(self):
-        stmt = "SELECT description FROM items"
-        return [x[0] for x in self.conn.execute(stmt)]
+
+    # return a list of all the items in the database depending on owner
+    def get_items(self, owner):
+        stmt = "SELECT description FROM items WHERE owner = (?)"
+        args = (owner, )
+        return [x[0] for x in self.conn.execute(stmt, args)]
