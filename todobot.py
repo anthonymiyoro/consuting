@@ -2,11 +2,11 @@ import time
 import json
 import requests
 import urllib
-from db import DBHelper
+from db import Database
 
 TOKEN = '320053880:AAH-nr-2Je_tgUpaPm4GIyMnHk0iIloNzEU'
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
-db = DBHelper()
+db = Database()
 
 
 # collect url
@@ -44,9 +44,9 @@ def get_last_chat_id_and_text(updates):
 
 # sends the message contained in text to chat_id
 def send_message(text, chat_id):
-	text = urllib.parse.quote_plus(text)
-	url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
-	get_url(url)
+    text = urllib.parse.quote_plus(text)
+    url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
+    get_url(url)
 
 
 # return highest id of all recieved updates
@@ -57,11 +57,13 @@ def get_last_update_id(updates):
     return max(update_ids)
 
 # loop through the updates then collect the text and chat
+
+
 def handle_updates(updates):
     for update in updates["result"]:
         try:
             text = update["message"]["text"]
-                chat = update["message"]["chat"]["id"]
+            chat = update["message"]["chat"]["id"]
 # store all items from the database in the items variable
             items = db.get_items()
 # check for and delete duplicates
@@ -69,16 +71,19 @@ def handle_updates(updates):
                 db.delete_item(text)
                 items = db.get_items()
             else:
+                # if not duplicate, add to db
                 db.add_item(text)
-                items= db.get_items()
+                items = db.get_items()
             message = "\n".join(items)
             send_message(message, chat)
         except KeyError:
             pass
 
+
 # infinite loop
 # collect last sent text and echo it back, check every 0.5 seconds
 def main():
+    db.setup()
     last_update_id = None
     while True:
         print("getting updates")
