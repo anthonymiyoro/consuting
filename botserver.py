@@ -1,10 +1,13 @@
 from flask import Flask
+from flask import request
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/", methods=["POST", "GET"])
 def hello():
-    return "hello {}".format(2+2)
+    print(request.data)
+    return ''
 
 
 if __name__ == '__main__':
