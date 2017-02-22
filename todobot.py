@@ -6,7 +6,7 @@ from db import Database
 
 TOKEN = '320053880:AAH-nr-2Je_tgUpaPm4GIyMnHk0iIloNzEU'
 URL = 'https://api.telegram.org/bot{}/'.format(TOKEN)
-db = Database()
+db = Database("/var/www/html/part3")
 
 
 # collect url
@@ -60,10 +60,7 @@ def get_last_update_id(updates):
         update_ids.append(int(update["update_id"]))
     return max(update_ids)
 
-# loop through the updates then collect the text and chat
-
-
-def handle_updates(updates):
+def handle_update(update):
     for update in updates["result"]:
         text = update["message"]["text"]
         chat = update["message"]["chat"]["id"]
@@ -79,7 +76,7 @@ def handle_updates(updates):
                 "Welcome to your Personal Automated To-Do List bot. Send any to do item and I'll store it. You can then send /done to remove items.", chat)
 # if / is in the message then ignore
         elif text.startswith("/"):
-            continue
+            return
 # bring back the menu after deleting an item
         elif text in items:
             db.delete_item(text, chat)
@@ -92,6 +89,14 @@ def handle_updates(updates):
             items = db.get_items(chat)
             message = "\n".join(items)
             send_message(message, chat)
+
+
+
+
+# loop through the updates then collect the text and chat
+def handle_updates(updates):
+    for update in updates["result"]:
+        handle_update(update)
 
 
 # create a keyboard with all the items, converts it to json
